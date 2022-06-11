@@ -56,14 +56,32 @@ nav {
   padding: 1%;
 }
 .skills {
-  width: 33%;
+  width: 100%;
   padding: 1%;
 
 }
 .grid-container {
+  margin: 0px 5%;
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-areas: 'myArea myArea myArea';
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 300px 300px 300px;
+  grid-template-areas: 
+  "bookcases bedroom patio"
+  "couches couches patio"
+  "desks desks desks";
+
 }
 .grid-item {
-  grid-area: 2 / 1 / span 2 / span 3;
+  grid-area: myArea;
+}
+div {
+  display: flex;
+  flex-direction: column;
+}
+@media only screen and (max-width: 600px) {
+  body {
+    background-color: #090D1C;
+    flex-direction: column;
+  }
 }
